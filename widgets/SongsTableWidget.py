@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import (QWidget, QTableWidget, QLabel,
+from PyQt5.QtWidgets import (QTableWidget, QLabel,
                              QTableWidgetItem,
                              QAbstractItemView, QHeaderView,
                              QMenu, QAction, QWidgetAction)
@@ -6,7 +6,7 @@ from PyQt5.QtCore import (Qt, pyqtSignal, QCoreApplication)
 from PyQt5.QtGui import QPixmap
 import qtawesome as qta
 
-class QSongsTableWidget(QTableWidget):
+class CSongsTableWidget(QTableWidget):
     itemPlay = pyqtSignal(int)
     itemAdd = pyqtSignal(list)
     itemCollect = pyqtSignal(list)
@@ -54,9 +54,9 @@ class QSongsTableWidget(QTableWidget):
         item.setText(_translate("MainWindow", "时长"))
         self.setHorizontalHeaderItem(5, item)
 
-        self.setup_rightbutton_actions() # 设置菜单
-        self.setup_slots() # 连接槽函数
-        self.setup_events() # 连接事件
+        self.setup_rightbutton_actions() #设置菜单
+        self.setup_slots()  #连接槽函数
+        self.setup_events() #连接事件
 
     # 设置菜单
     def setup_rightbutton_actions(self):

@@ -3,7 +3,12 @@ from PyQt5.QtWidgets import (QWidget, QPushButton, QLabel, QSlider,
 from PyQt5.QtCore import (Qt, QCoreApplication, QMetaObject, QSize, pyqtSignal, pyqtSlot)
 import qtawesome as qta
 
-class QVolumeControler(QWidget):
+
+class CVolumeControler(QWidget):
+    """
+        音量控制类
+    """
+    #signals
     volumeChanged = pyqtSignal(int)
     mutedChanged = pyqtSignal(bool)
 
@@ -19,14 +24,16 @@ class QVolumeControler(QWidget):
         self.setSizePolicy(sizePolicy)
         self.setMinimumSize(QSize(40, 240))
         self.setMaximumSize(QSize(40, 240))
+
         self.verticalLayout_8 = QVBoxLayout(self)
         self.verticalLayout_8.setContentsMargins(9, 0, 9, 5)
         self.verticalLayout_8.setSpacing(10)
         self.verticalLayout_8.setObjectName("verticalLayout_8")
+
         self.volume_lab = QLabel('100', self)
         self.volume_lab.setObjectName('volume_lab')
         self.volume_lab.setToolTip('100')
-        self.verticalLayout_8.addWidget(self.volume_lab)
+
         self.volume_bar = QSlider(self)
         self.volume_bar.setMinimumSize(QSize(22, 160))
         self.volume_bar.setMaximumSize(QSize(22, 160))
@@ -34,7 +41,7 @@ class QVolumeControler(QWidget):
         self.volume_bar.setProperty("value", 100)
         self.volume_bar.setOrientation(Qt.Vertical)
         self.volume_bar.setObjectName("volume_bar")
-        self.verticalLayout_8.addWidget(self.volume_bar)
+
         self.volume_mute = QPushButton(self)
         self.volume_mute.setMinimumSize(QSize(24, 24))
         self.volume_mute.setMaximumSize(QSize(24, 24))
@@ -42,6 +49,9 @@ class QVolumeControler(QWidget):
         self.volume_mute.setIcon(qta.icon('fa.volume-up', color='#333'))
         self.volume_mute.setToolTip('静音')
         self.volume_mute.setObjectName("volume_mute")
+
+        self.verticalLayout_8.addWidget(self.volume_lab)
+        self.verticalLayout_8.addWidget(self.volume_bar)
         self.verticalLayout_8.addWidget(self.volume_mute)
 
         QMetaObject.connectSlotsByName(self)

@@ -5,11 +5,13 @@ from PyQt5.QtWidgets import (QWidget, QPushButton, QSpacerItem,
 from PyQt5.QtCore import (QSize, pyqtSignal, QDir)
 import qtawesome as qta
 
-class QSongsEditBar(QWidget):
+class CSongsEditBar(QWidget):
     upmoved = pyqtSignal()
     downmoved = pyqtSignal()
     removed = pyqtSignal()
     fromLocal = pyqtSignal(list)
+
+    table = None
 
     def __init__(self, parent):
         QWidget.__init__(self, parent)

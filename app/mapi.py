@@ -99,7 +99,6 @@ class EngineKuwo(Base):
     @error_getter
     def search(kw: str):
         '''搜索'''
-        
         params = EngineKuwo.search_params
         params['key'] = kw
         url = EngineKuwo.search_url
@@ -127,8 +126,7 @@ class EngineKuwo(Base):
     @staticmethod
     @error_getter
     def get_music_url(rid):
-        '''获取歌曲 URL''' 
-        
+        '''获取歌曲 URL'''
         from_url = EngineKuwo.from_url
 
         from_params = EngineKuwo.from_params
@@ -159,8 +157,7 @@ class EngineKuwo(Base):
     @staticmethod
     @error_getter
     def get_music_lrc(rid):
-        '''获取歌词'''    
-            
+        '''获取歌词'''
         default_lrc = [['无歌词', 0]]
         
         lrc_url = EngineKuwo.lrc_url
@@ -186,7 +183,6 @@ class EngineKuwo(Base):
     @error_getter
     def get_pic(url):
         '''获取图片'''
-
         headers = EngineKuwo.headers
 
         pic = requests.get(url, headers=headers).content

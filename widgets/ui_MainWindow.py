@@ -9,7 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from widgets.SongsEditBar import CSongsEditBar
+from widgets.SongsTableWidget import CSongsTableWidget
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -208,7 +209,7 @@ class Ui_MainWindow(object):
         self.last_song_play.setObjectName("last_song_play")
         self.horizontalLayout_3.addWidget(self.last_song_play)
         self.verticalLayout_8.addLayout(self.horizontalLayout_3)
-        self.last_song = QSongsTableWidget(self.home_tab)
+        self.last_song = CSongsTableWidget(self.home_tab)
         self.last_song.setMaximumSize(QtCore.QSize(16777215, 52))
         self.last_song.setObjectName("last_song")
         self.verticalLayout_8.addWidget(self.last_song)
@@ -234,7 +235,7 @@ class Ui_MainWindow(object):
         self.last_playlist_addall.setObjectName("last_playlist_addall")
         self.horizontalLayout.addWidget(self.last_playlist_addall)
         self.verticalLayout_8.addLayout(self.horizontalLayout)
-        self.last_playlist = QSongsTableWidget(self.home_tab)
+        self.last_playlist = CSongsTableWidget(self.home_tab)
         self.last_playlist.setObjectName("last_playlist")
         self.verticalLayout_8.addWidget(self.last_playlist)
         spacerItem3 = QtWidgets.QSpacerItem(0, 0, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
@@ -246,7 +247,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.setContentsMargins(8, 5, 8, 3)
         self.verticalLayout_7.setSpacing(0)
         self.verticalLayout_7.setObjectName("verticalLayout_7")
-        self.results_view = QSongsTableWidget(self.results_tab)
+        self.results_view = CSongsTableWidget(self.results_tab)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -307,10 +308,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_14.setContentsMargins(8, 5, 8, 3)
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName("verticalLayout_14")
-        self.collections_view_editbar = QSongsEditBar(self.collections_tab)
+        self.collections_view_editbar = CSongsEditBar(self.collections_tab)
         self.collections_view_editbar.setObjectName("collections_view_editbar")
         self.verticalLayout_14.addWidget(self.collections_view_editbar)
-        self.collections_view = QSongsTableWidget(self.collections_tab)
+        self.collections_view = CSongsTableWidget(self.collections_tab)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -325,10 +326,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.setContentsMargins(8, 5, 8, 3)
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName("verticalLayout_6")
-        self.playlist_view_editbar = QSongsEditBar(self.playlist_tab)
+        self.playlist_view_editbar = CSongsEditBar(self.playlist_tab)
         self.playlist_view_editbar.setObjectName("playlist_view_editbar")
         self.verticalLayout_6.addWidget(self.playlist_view_editbar)
-        self.playlist_view = QSongsTableWidget(self.playlist_tab)
+        self.playlist_view = CSongsTableWidget(self.playlist_tab)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -731,6 +732,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
+
         self.input_engine.setCurrentIndex(-1)
         self.stacked_tab.setCurrentIndex(5)
         self.settings_contents.setCurrentIndex(0)
@@ -823,5 +825,5 @@ class Ui_MainWindow(object):
         self.mvolume.setToolTip(_translate("MainWindow", "音量 100"))
         self.mplaylist.setToolTip(_translate("MainWindow", "播放列表"))
         self.mplaylist.setText(_translate("MainWindow", "0"))
-from widgets.SongsEditBar import QSongsEditBar
-from widgets.SongsTableWidget import QSongsTableWidget
+
+
